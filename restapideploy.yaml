@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: w2orestapi
+  name: w2orestapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: w2orestapi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: w2orestapi
+    spec:
+      containers:
+      - image: w2opython:latest
+        name: wtoimage
+        imagePullPolicy: IfNotPresent
+        resources: {}
+status: {}
